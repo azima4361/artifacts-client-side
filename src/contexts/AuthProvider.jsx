@@ -36,13 +36,21 @@ const AuthProvider = ({children}) => {
   const signInWithEmailPassword = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
+   const userLogin = (email,password)=>{
+        setLoading(true);
+        return signInWithEmailAndPassword(auth,email,password)
+    }
 
   //   logOut Button
-  const logOut = () => {
-    return signOut(auth);
-  };
+  const logOut = ()=>{
+        setLoading(true);
+        return signOut(auth)
+        .finally(() => setLoading(false));
+    }
+
   const authInfo = {
     user,
+    userLogin,
     setUser,
     signInByGoogle,
     createNewUser,
