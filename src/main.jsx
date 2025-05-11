@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         element:<AllArtifacts></AllArtifacts>,
       },
       {
-        path:"/add-artifacts",
+        path:"/add-artifact",
         element: <PrivateRoute><AddArtifacts></AddArtifacts></PrivateRoute>
       },
       {
