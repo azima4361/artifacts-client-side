@@ -7,18 +7,65 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import ErrorPage from './components/ErrorPage.jsx';
+import Login from './components/Login.jsx';
+import Register from './components/Register.jsx';
+import AuthProvider from './contexts/AuthProvider.jsx';
+import MainLayout from './layouts/MainLayout.jsx';
+import Home from './pages/Home.jsx';
+import AllArtifacts from './components/AllArtifacts.jsx';
+import PrivateRoute from './pages/PrivateRoute.jsx';
+import AddArtifacts from './components/AddArtifacts.jsx';
+import MyArtifacts from './components/MyArtifacts.jsx';
+import LikedArtifacts from './components/LikedArtifacts.jsx';
+
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div className='text-9xl'>Hello world!</div>,
+    element: <MainLayout></MainLayout>,
+    errorElement:<ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/artifacts",
+        element:<AllArtifacts></AllArtifacts>,
+      },
+      {
+        path:"/add-artifacts",
+        element: <PrivateRoute><AddArtifacts></AddArtifacts></PrivateRoute>
+      },
+      {
+        path:"/my-artifacts",
+        element: <PrivateRoute><MyArtifacts></MyArtifacts></PrivateRoute>
+      },
+      {
+        path:"/liked-artifacts",
+        element: <PrivateRoute><LikedArtifacts></LikedArtifacts></PrivateRoute>
+      }
+    ]
+
+  },
+  {
+    path: "/login",
+    element: <Login></Login>,
+  },
+  {
+    path: "/register",
+    element: <Register></Register>,
   },
 ]);
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    </AuthProvider>
+    
   </StrictMode>,
 )
