@@ -11,6 +11,13 @@ const AddArtifacts = () => {
     e.preventDefault();
     const form = e.target;
 
+     const imageUrl = form.image.value.trim();
+  const imageRegex = /\.(jpeg|jpg|gif|png|webp|svg)$/i;
+
+  if (!imageRegex.test(imageUrl)) {
+    Swal.fire('Invalid Image URL', 'Please enter a valid image URL that ends with .jpg, .png, etc.', 'error');
+    return; 
+  }
     const newArtifact = {
       name: form.name.value,
       image: form.image.value,
@@ -24,6 +31,7 @@ const AddArtifacts = () => {
         name: user.displayName,
         email: user.email
       },
+      userEmail: user.email,
       likeCount: 0
     };
 
@@ -68,6 +76,9 @@ const AddArtifacts = () => {
         confirmButtonText: 'Try Again'
       });
     }
+
+  
+
   };
 
   return (
@@ -126,7 +137,7 @@ const AddArtifacts = () => {
         </div>
 
         <div className="md:col-span-2">
-          <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition">
+          <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition cursor-pointer">
             Add Artifact
           </button>
         </div>
