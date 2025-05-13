@@ -23,7 +23,7 @@ const AddArtifacts = () => {
       image: form.image.value,
       type: form.type.value,
       historicalContext: form.context.value,
-      createdAt: form.createdAt.value,
+      artifactsCreatedAt: form.artifactsCreatedAt.value,
       discoveredAt: form.discoveredAt.value,
       discoveredBy: form.discoveredBy.value,
       presentLocation: form.presentLocation.value,
@@ -87,7 +87,7 @@ const AddArtifacts = () => {
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label className="block font-medium mb-1">Artifact Name</label>
-          <input name="name" required className="w-full border rounded-lg px-4 py-2 focus:outline-blue-400" placeholder="Rosetta Stone" />
+          <input name="name" required className="w-full border rounded-lg px-4 py-2 focus:outline-blue-400" placeholder="Artifact" />
         </div>
 
         <div>
@@ -113,7 +113,7 @@ const AddArtifacts = () => {
 
         <div>
           <label className="block font-medium mb-1">Created At</label>
-          <input name="createdAt" required className="w-full border rounded-lg px-4 py-2 focus:outline-blue-400" placeholder="e.g., 196 BC" />
+          <input name="artifactsCreatedAt" required className="w-full border rounded-lg px-4 py-2 focus:outline-blue-400" placeholder="e.g., 196 BC" />
         </div>
 
         <div>

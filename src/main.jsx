@@ -19,6 +19,7 @@ import AddArtifacts from './components/AddArtifacts.jsx';
 import MyArtifacts from './components/MyArtifacts.jsx';
 import LikedArtifacts from './components/LikedArtifacts.jsx';
 import ArtifactDetails from './components/ArtifactDetails.jsx';
+import UpdateArtifact from './components/UpdateArtifact.jsx';
 
 
 
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path:"/liked-artifacts",
         element: <PrivateRoute><LikedArtifacts></LikedArtifacts></PrivateRoute>
+      },
+      {
+        path:"/update/:id",
+        element: <PrivateRoute><UpdateArtifact></UpdateArtifact></PrivateRoute>
       }
     ]
 

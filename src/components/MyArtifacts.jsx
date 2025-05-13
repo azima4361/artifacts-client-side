@@ -46,6 +46,7 @@ const MyArtifacts = () => {
         if (result.deletedCount > 0) {
           setMyArtifacts(prev => prev.filter(artifact => artifact._id !== id));
           Swal.fire('Deleted!', 'Your artifact has been deleted.', 'success');
+          navigate('/artifacts');
         } else {
           Swal.fire('Not Found', 'Artifact not found.', 'info');
         }
@@ -57,7 +58,7 @@ const MyArtifacts = () => {
   };
 
   const handleUpdate = (id) => {
-    navigate(`/update-artifact/${id}`);
+    navigate(`/update/${id}`);
   };
 
   if (isLoading || loading) return <Loader />;
@@ -80,13 +81,13 @@ const MyArtifacts = () => {
               <div className="flex justify-between gap-3 mt-4">
                 <button
                   onClick={() => handleUpdate(artifact._id)}
-                  className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600"
+                  className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 cursor-pointer"
                 >
                   Update
                 </button>
                 <button
                   onClick={() => handleDelete(artifact._id)}
-                  className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+                  className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 cursor-pointer"
                 >
                   Delete
                 </button>

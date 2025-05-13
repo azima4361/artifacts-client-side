@@ -37,14 +37,14 @@ const ArtifactDetails = () => {
     setIsLiking(true);
 
     try {
-      // Update like count on artifact
+      
       const likeRes = await fetch(`http://localhost:5000/artifact/like/${id}`, {
         method: 'PATCH'
       });
 
       if (!likeRes.ok) throw new Error('Failed to update like count');
 
-      // Update user's liked list
+      
       const userRes = await fetch(`http://localhost:5000/users/like`, {
         method: 'PATCH',
         headers: {
@@ -90,6 +90,7 @@ const ArtifactDetails = () => {
       <div className="mb-4">
         <p><strong>Type:</strong> {artifact.type}</p>
         <p><strong>Created At:</strong> {new Date(artifact.createdAt).toLocaleString()}</p>
+        <p><strong>Artifact Created (Historically):</strong> {artifact.artifactsCreatedAt}</p>
         <p><strong>Discovered At:</strong> {artifact.discoveredAt}</p>
         <p><strong>Discovered By:</strong> {artifact.discoveredBy}</p>
         <p><strong>Present Location:</strong> {artifact.presentLocation}</p>
@@ -99,7 +100,7 @@ const ArtifactDetails = () => {
 
       <button
         onClick={handleLike}
-        className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 disabled:opacity-60"
+        className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 disabled:opacity-60 cursor-pointer"
         disabled={isLiking}
       >
         {isLiking ? 'Liking...' : 'Like'}
