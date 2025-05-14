@@ -33,9 +33,9 @@ const AuthProvider = ({children}) => {
   };
 
   //   signInWithEmailPassword
-  const signInWithEmailPassword = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
-  };
+  // const signInWithEmailPassword = (email, password) => {
+  //   return signInWithEmailAndPassword(auth, email, password);
+  // };
    const userLogin = (email,password)=>{
         setLoading(true);
         return signInWithEmailAndPassword(auth,email,password)
@@ -55,7 +55,7 @@ const AuthProvider = ({children}) => {
     signInByGoogle,
     createNewUser,
     updatingProfile,
-    signInWithEmailPassword,
+    // signInWithEmailPassword,
     logOut,
     loading,
     setLoading,

@@ -37,11 +37,13 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
+        
         toast.success("Login successful!");
         navigate(location?.state || "/");
+        
         localStorage.setItem("userEmail", user.email);
 
-        // Optional: Update login timestamp
+        
         const lastSignInTime = user?.metadata?.lastSignInTime;
         fetch('http://localhost:5000/users', {
           method: 'PATCH',
@@ -103,7 +105,7 @@ const Login = () => {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white font-semibold rounded-lg py-2 hover:bg-blue-700 transition"
+            className="w-full bg-blue-600 text-white font-semibold rounded-lg py-2 hover:bg-blue-700 transition cursor-pointer"
           >
             Login
           </button>

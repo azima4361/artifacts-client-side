@@ -16,4 +16,13 @@ const PrivateRoute = ({ children }) => {
   return <Navigate state={location.pathname} to={"/login"}></Navigate>;
 };
 
+//  if (!user || !localStorage.getItem("token")) {
+//     return <Navigate to="/login" state={location.pathname}> </Navigate>;
+//   }
+
+//   return children;
+// };
+
 export default PrivateRoute;
+
+

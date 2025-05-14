@@ -5,7 +5,7 @@ const AllArtifacts = () => {
   const [artifacts, setArtifacts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/all') // your backend route
+    fetch('http://localhost:5000/all')
       .then(res => res.json())
       .then(data => setArtifacts(data));
   }, []);

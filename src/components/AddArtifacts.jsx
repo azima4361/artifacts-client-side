@@ -32,7 +32,8 @@ const AddArtifacts = () => {
         email: user.email
       },
       userEmail: user.email,
-      likeCount: 0
+      likeCount: 0 ,
+      likedBy: []
     };
 
     const result = await Swal.fire({
@@ -103,6 +104,7 @@ const AddArtifacts = () => {
             <option value="Weapons">Weapons</option>
             <option value="Documents">Documents</option>
             <option value="Writings">Writings</option>
+            <option value="Painting">Painting</option>
           </select>
         </div>
 

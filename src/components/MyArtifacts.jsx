@@ -21,8 +21,8 @@ const MyArtifacts = () => {
         .catch(err => {
           console.error(err);
           setIsLoading(false);
-        });
-    }
+        })
+      }
   }, [user, loading]);
 
   const handleDelete = async (id) => {
@@ -73,7 +73,7 @@ const MyArtifacts = () => {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {myArtifacts.map(artifact => (
+          {Array.isArray(myArtifacts) && myArtifacts.map(artifact => (
             <div key={artifact._id} className="border rounded-lg shadow p-4 bg-white">
               <img src={artifact.image} alt={artifact.name} className="w-full h-60 object-cover rounded mb-3" />
               <h3 className="text-xl font-semibold">{artifact.name}</h3>
