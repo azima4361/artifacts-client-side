@@ -12,7 +12,10 @@ const MyArtifacts = () => {
 
   useEffect(() => {
     if (!loading && user?.email) {
-      fetch(`http://localhost:5000/all/user?email=${user.email}`)
+      fetch(`http://localhost:5000/all/user?email=${user.email}`,{
+  method: 'GET',
+  credentials: 'include'
+})
         .then(res => res.json())
         .then(data => {
           setMyArtifacts(data);

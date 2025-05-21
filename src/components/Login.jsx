@@ -17,9 +17,25 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
-        toast.success("Logged in with Google!");
-        navigate(location?.state || "/");
-        localStorage.setItem("userEmail", user.email);
+        // toast.success("Logged in with Google!");
+        // navigate(location?.state || "/");
+        // localStorage.setItem("userEmail", user.email);
+
+        fetch('http://localhost:5000/jwt', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  credentials: 'include',
+  body: JSON.stringify({ email: user.email })
+})
+  .then(res => res.json())
+  .then(() => {
+    toast.success("Logged in with Google!");
+    navigate(location?.state || "/");
+  })
+  .catch(() => {
+    toast.error("JWT issue during Google login");
+  });
+
       })
       .catch(() => {
         setError("Google sign-in failed.");
@@ -38,10 +54,26 @@ const Login = () => {
         const user = result.user;
         setUser(user);
         
-        toast.success("Login successful!");
-        navigate(location?.state || "/");
+        // toast.success("Login successful!");
+        // navigate(location?.state || "/");
         
-        localStorage.setItem("userEmail", user.email);
+        // localStorage.setItem("userEmail", user.email);
+
+        fetch('http://localhost:5000/jwt', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  credentials: 'include',
+  body: JSON.stringify({ email })
+})
+  .then(res => res.json())
+  .then(() => {
+    toast.success("Login successful!");
+    navigate(location?.state || "/");
+  })
+  .catch(() => {
+    toast.error("JWT issue during login");
+  });
+
 
         
         const lastSignInTime = user?.metadata?.lastSignInTime;

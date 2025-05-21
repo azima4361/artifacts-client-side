@@ -9,17 +9,44 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  // const handleLogout = () => {
+  //   logOut();
+  //   Swal.fire({
+  //     position: 'center',
+  //     icon: 'success',
+  //     title: 'Logout Successful',
+  //     showConfirmButton: false,
+  //     timer: 2000,
+  //   });
+  //   navigate('/');
+  // };
+
   const handleLogout = () => {
-    logOut();
-    Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Logout Successful',
-      showConfirmButton: false,
-      timer: 2000,
+  fetch('http://localhost:5000/logout', {
+    method: 'POST',
+    credentials: 'include', 
+  })
+    .then(() => {
+      logOut(); 
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Logout Successful',
+        showConfirmButton: false,
+        timer: 2000,
+      });
+      navigate('/');
+    })
+    .catch((error) => {
+      console.error('Logout failed:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Logout failed. Try again!',
+      });
     });
-    navigate('/');
-  };
+};
+
 
   const navItems = (
     <>
