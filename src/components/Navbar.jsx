@@ -93,7 +93,7 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-xl font-bold flex items-center">
+        <Link to="/" className="btn btn-ghost text-lg md:text-xl font-bold flex items-center">
           <img src={logo} alt="Logo" className="w-8 h-8 mr-2" />
           ArtifactTracker
         </Link>

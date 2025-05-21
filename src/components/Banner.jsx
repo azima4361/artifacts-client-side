@@ -28,7 +28,7 @@ const Banner = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0  bg-opacity-50 flex flex-col justify-center items-center text-white p-4">
-              <h2 className="text-3xl md:text-5xl font-bold">Ancient Egyptian Wonders</h2>
+              <h2 className="text-xl md:text-5xl font-bold">Ancient Egyptian Wonders</h2>
               <p className="text-md md:text-lg mt-2 max-w-2xl text-center">
                 Discover and track rare Egyptian artifacts, from hieroglyphic scrolls to preserved statues.
               </p>
@@ -44,7 +44,7 @@ const Banner = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0  bg-opacity-50 flex flex-col justify-center items-center text-white p-4">
-              <h2 className="text-3xl md:text-5xl font-bold">Roman Empire Relics</h2>
+              <h2 className="text-2xl md:text-5xl font-bold">Roman Empire Relics</h2>
               <p className="text-md md:text-lg mt-2 max-w-2xl text-center">
                 Keep a detailed record of Roman-era pottery, weapons, and architectural pieces.
               </p>
@@ -60,7 +60,7 @@ const Banner = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0  bg-opacity-50 flex flex-col justify-center items-center text-white p-4">
-              <h2 className="text-3xl md:text-5xl font-bold">Medieval Era Treasures</h2>
+              <h2 className="text-2xl md:text-5xl font-bold">Medieval Era Treasures</h2>
               <p className="text-md md:text-lg mt-2 max-w-2xl text-center">
                 Catalog swords, shields, and manuscripts from the Middle Ages for global preservation.
               </p>
