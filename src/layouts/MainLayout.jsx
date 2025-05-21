@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import DynamicTitle from '../components/DynamicTitle';
 
 const MainLayout = () => {
-    console.log(" MainLayout is rendering");
+    // console.log(" MainLayout is rendering");
 
     return (
         <div>

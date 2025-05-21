@@ -49,7 +49,7 @@ const AddArtifacts = () => {
     if (!result.isConfirmed) return;
 
     try {
-      const res = await fetch('http://localhost:5000/all', {
+      const res = await fetch('https://artifacts-server-side.vercel.app/all', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newArtifact)

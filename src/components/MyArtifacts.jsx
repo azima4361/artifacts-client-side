@@ -12,7 +12,7 @@ const MyArtifacts = () => {
 
   useEffect(() => {
     if (!loading && user?.email) {
-      fetch(`http://localhost:5000/all/user?email=${user.email}`,{
+      fetch(`https://artifacts-server-side.vercel.app/all/user?email=${user.email}`,{
   method: 'GET',
   credentials: 'include'
 })
@@ -41,7 +41,7 @@ const MyArtifacts = () => {
 
     if (confirm.isConfirmed) {
       try {
-        const res = await fetch(`http://localhost:5000/artifact/${id}`, {
+        const res = await fetch(`https://artifacts-server-side.vercel.app/artifact/${id}`, {
           method: 'DELETE'
         });
 

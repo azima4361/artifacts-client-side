@@ -11,10 +11,10 @@ const LikedArtifacts = () => {
  useEffect(() => {
   if (user?.email) {
     setIsLoading(true);
-    fetch(`http://localhost:5000/users/liked/${user.email}`)
+    fetch(`https://artifacts-server-side.vercel.app/users/liked/${user.email}`)
       .then(res => res.json())
       .then(data => {
-        console.log('Fetched liked artifacts:', data);
+        // console.log('Fetched liked artifacts:', data);
         setLikedArtifacts(data);
         setIsLoading(false);
       })

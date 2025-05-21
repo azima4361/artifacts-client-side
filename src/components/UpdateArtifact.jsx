@@ -9,7 +9,7 @@ const UpdateArtifact = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/all/${id}`)
+    fetch(`https://artifacts-server-side.vercel.app/all/${id}`)
       .then(res => res.json())
       .then(data => setArtifact(data))
       .catch(err => console.error('Failed to load artifact', err));
@@ -37,7 +37,7 @@ const UpdateArtifact = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/all/${id}`, {
+      const res = await fetch(`https://artifacts-server-side.vercel.app/all/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

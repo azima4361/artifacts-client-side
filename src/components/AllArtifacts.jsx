@@ -5,7 +5,7 @@
 //   const [artifacts, setArtifacts] = useState([]);
 
 //   useEffect(() => {
-//     fetch('http://localhost:5000/all')
+//     fetch('https://artifacts-server-side.vercel.app/all')
 //       .then(res => res.json())
 //       .then(data => setArtifacts(data));
 //   }, []);
@@ -41,7 +41,7 @@ const AllArtifacts = () => {
 
   const fetchArtifacts = async (search = '') => {
     try {
-      const res = await fetch(`http://localhost:5000/all?search=${search}`);
+      const res = await fetch(`https://artifacts-server-side.vercel.app/all?search=${search}`);
       const data = await res.json();
       setArtifacts(data);
     } catch (error) {

@@ -21,7 +21,7 @@ const Login = () => {
         // navigate(location?.state || "/");
         // localStorage.setItem("userEmail", user.email);
 
-        fetch('http://localhost:5000/jwt', {
+        fetch('https://artifacts-server-side.vercel.app/jwt', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   credentials: 'include',
@@ -59,7 +59,7 @@ const Login = () => {
         
         // localStorage.setItem("userEmail", user.email);
 
-        fetch('http://localhost:5000/jwt', {
+        fetch('https://artifacts-server-side.vercel.app/jwt', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   credentials: 'include',
@@ -77,7 +77,7 @@ const Login = () => {
 
         
         const lastSignInTime = user?.metadata?.lastSignInTime;
-        fetch('http://localhost:5000/users', {
+        fetch('https://artifacts-server-side.vercel.app/users', {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, lastSignInTime })

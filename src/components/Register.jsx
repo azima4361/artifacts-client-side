@@ -65,7 +65,7 @@ const Register = () => {
 
         toast.success("User Registration Successful");
 
-        fetch('http://localhost:5000/users', {
+        fetch('https://artifacts-server-side.vercel.app/users', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify({ name, email, photo })

@@ -14,7 +14,7 @@
 //   const [isLiking, setIsLiking] = useState(false);
 
 //   useEffect(() => {
-//     fetch(`http://localhost:5000/all/${id}`)
+//     fetch(`https://artifacts-server-side.vercel.app/all/${id}`)
 //       .then(res => res.json())
 //       .then(data => {
 //         setArtifact(data);
@@ -38,14 +38,14 @@
 
 //     try {
       
-//       const likeRes = await fetch(`http://localhost:5000/artifact/like/${id}`, {
+//       const likeRes = await fetch(`https://artifacts-server-side.vercel.app/artifact/like/${id}`, {
 //         method: 'PATCH'
 //       });
 
 //       if (!likeRes.ok) throw new Error('Failed to update like count');
 
       
-//       const userRes = await fetch(`http://localhost:5000/users/like`, {
+//       const userRes = await fetch(`https://artifacts-server-side.vercel.app/users/like`, {
 //         method: 'PATCH',
 //         headers: {
 //           'Content-Type': 'application/json'
@@ -130,7 +130,7 @@ const ArtifactDetails = () => {
   const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/all/${id}`)
+    fetch(`https://artifacts-server-side.vercel.app/all/${id}`)
       .then(res => res.json())
       .then(data => {
         setArtifact(data);
@@ -155,7 +155,7 @@ const ArtifactDetails = () => {
 
     try {
       const method = isLiked ? 'DELETE' : 'PATCH'; 
-      const likeRes = await fetch(`http://localhost:5000/artifact/like/${id}`, {
+      const likeRes = await fetch(`https://artifacts-server-side.vercel.app/artifact/like/${id}`, {
         // method
          method: 'PATCH',
   headers: {
@@ -166,7 +166,7 @@ const ArtifactDetails = () => {
 
       if (!likeRes.ok) throw new Error('Failed to update like count');
 
-      const userRes = await fetch(`http://localhost:5000/users/like`, {
+      const userRes = await fetch(`https://artifacts-server-side.vercel.app/users/like`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'

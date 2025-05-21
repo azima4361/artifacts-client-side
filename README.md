@@ -1,12 +1,23 @@
-# React + Vite
+# Historical Artifacts Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Purpose
+The Historical Artifacts Tracker is a React-based web application designed to catalog, showcase, and track historical artifacts from various eras and regions. It helps users explore artifact categories, view top contributors, and learn about cultural treasures worldwide.
 
-Currently, two official plugins are available:
+## Live URL
+[https://artifacts-client-side.web.app/](https://your-live-url.com)  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Key Features
+- Responsive homepage banner with sliding artifact themes (Ancient Egyptian, Roman Empire, Medieval Era).
+- Artifact categories overview section showing artifact counts by category.
+- Top contributors section highlighting users who have submitted artifacts.
+- Smooth automatic and manual slideshow navigation using SwiperJS.
+- Responsive design optimized for mobile, tablet, and desktop screens.
+- Graceful handling of empty data states with user-friendly messaging.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## NPM Packages Used
+- **react** — Frontend UI library.
+- **swiper** — For building responsive and feature-rich sliders/carousels.
+- **tailwindcss** — Utility-first CSS framework for styling and responsiveness.
+- **react-dom** — For rendering React components.
+

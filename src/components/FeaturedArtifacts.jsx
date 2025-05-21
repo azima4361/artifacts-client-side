@@ -7,7 +7,7 @@ const FeaturedArtifacts = () => {
   const [artifacts, setArtifacts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/artifacts/featured')
+    fetch('https://artifacts-server-side.vercel.app/artifacts/featured')
       .then(res => res.json())
       .then(data => setArtifacts(data))
       .catch(err => console.error('Error fetching featured artifacts:', err));

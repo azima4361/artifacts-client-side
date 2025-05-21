@@ -22,7 +22,7 @@ const Navbar = () => {
   // };
 
   const handleLogout = () => {
-  fetch('http://localhost:5000/logout', {
+  fetch('https://artifacts-server-side.vercel.app/logout', {
     method: 'POST',
     credentials: 'include', 
   })
