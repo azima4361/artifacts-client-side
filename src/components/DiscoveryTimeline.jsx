@@ -2,8 +2,8 @@ import React from 'react';
 
 const DiscoveryTimeline = () => {
   const timelineData = [
-    { year: "1500 BC", name: "Rosetta Stone", image: "/src/assets/RosettaStone.jpg", location: "Egypt" },
-    { year: "200 AD", name: "Terracotta Army", image: "/src/assets/TerracottaArmy.jpeg", location: "China" },
+    { year: "1500 BC", name: "Rosetta Stone", image:`https://i.ibb.co/Ld9DcRWX/Rosetta-Stone.jpg`, location: "Egypt" },
+    { year: "200 AD", name: "Terracotta Army", image: `https://i.ibb.co/qMYhNBV7/Terracotta-Army.jpg`, location: "China" },
     
   ];
 

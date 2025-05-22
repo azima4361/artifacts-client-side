@@ -6,12 +6,25 @@ import { Link } from 'react-router-dom';
 const FeaturedArtifacts = () => {
   const [artifacts, setArtifacts] = useState([]);
 
-  useEffect(() => {
-    fetch('https://artifacts-server-side.vercel.app/artifacts/featured')
-      .then(res => res.json())
-      .then(data => setArtifacts(data))
-      .catch(err => console.error('Error fetching featured artifacts:', err));
-  }, []);
+//   useEffect(() => {
+//     fetch('https://artifacts-server-side.vercel.app/artifacts/featured'), {
+//   method: 'GET',
+//   credentials: 'include'
+// }
+//       .then(res => res.json())
+//       .then(data => setArtifacts(data))
+//       .catch(err => console.error('Error fetching featured artifacts:', err));
+//   }, []);
+
+useEffect(() => {
+  fetch('https://artifacts-server-side.vercel.app/artifacts/featured', {
+    method: 'GET',
+    credentials: 'include'
+  })
+    .then(res => res.json())
+    .then(data => setArtifacts(data))
+    .catch(err => console.error('Error fetching featured artifacts:', err));
+}, []);
 
   return (
     <div className="my-12 px-4 md:px-16">
